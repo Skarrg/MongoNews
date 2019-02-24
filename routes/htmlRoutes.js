@@ -27,4 +27,8 @@ module.exports = function (app) {
       }).catch(function (err) { console.log(err) });
     });
   });
+
+  app.get('*',function (req, res) {
+    res.redirect('/');
+});
 }
