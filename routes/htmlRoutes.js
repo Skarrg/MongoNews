@@ -3,7 +3,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-  app.get("/", function (req, res) {
+  app.get("/home", function (req, res) {
     db.Article.find({}).then(function (dbArticle) {
       var dbObject = { article: dbArticle };
       res.render("index", dbObject);
@@ -29,6 +29,6 @@ module.exports = function (app) {
   });
 
   app.get('*',function (req, res) {
-    res.redirect('/');
+    res.redirect('/home');
 });
 }
