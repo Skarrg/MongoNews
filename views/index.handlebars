@@ -1,26 +1,16 @@
-<h1>Articles</h1>
-
-{{!-- <div id="wrapper">
-    <div id="articles"></div>
-    <div id="notes"></div>
-</div> --}}
-
 {{#each article}}
-<div class="card border-secondary mb-3 rounded-0">
+<article class="card border-secondary mb-3 rounded-0">
     <div class="card-header">
-        <button type="button" class="btn btn-sm c-button" disabled>{{this.category}}</button>
-        <ul class="list-inline float-right">
-            <a href="article/update/{{this.id}}">
-                <li class="list-inline-item"><button class="btn btn-secondary btn-sm rounded-0">Update</button></li>
-            </a>
-            <li class="list-inline-item"><button class="btn btn-danger btn-sm rounded-0 ml-2 delete"
-                    data-id="{{this.id}}"><i class="fas fa-times"></i></button></li>
+        <ul class="list-inline">
+            <li class="list-inline-item float-left">
+            <h5><a href="{{this.link}}">{{this.title}}</a></h5>
+            </li>
         </ul>
     </div>
     <div class="card-body text-secondary">
-        <h5 class="card-title">
-            <a href="article/{{this.id}}">{{this.title}}</a>
-        </h5>
+        <div class="card-title">
+            <a href="/leaveComment/{{_id}}" class="card-link">Leave a Comment</a>
+        </div>
     </div>
-</div>
+</article>
 {{/each}}
